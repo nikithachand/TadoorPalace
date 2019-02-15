@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "895906181646",
+    "firebase_url": "https://tadoorpalace.firebaseio.com",
+    "project_id": "tadoorpalace",
+    "storage_bucket": "tadoorpalace.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:895906181646:android:ff5106cb6a30793a",
+        "android_client_info": {
+          "package_name": "com.example.tadoorpalace"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "895906181646-8jokhh9ehjh1ee1jhq1fqoh2abl79ikh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tadoorpalace",
+            "certificate_hash": "247fbc17bd5deec88dbbc0ba49c236d62c0a0225"
+          }
+        },
+        {
+          "client_id": "895906181646-b34qtufh6trb4gmn2v5kc2kvsnalqlaq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAII6rw1Yjfmzkum6Dc7rxTausJwbL-QCY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "895906181646-b34qtufh6trb4gmn2v5kc2kvsnalqlaq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

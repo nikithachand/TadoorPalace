@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/register"
+    tools:context=".LoginActivity">
+
+    <ImageView
+        android:id="@+id/login_app"
+        android:layout_width="300dp"
+        android:layout_height="170dp"
+        android:src="@drawable/logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+
+        />
+
+    <EditText
+        android:id="@+id/number_input"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@+id/login_app"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="35dp"
+        android:background="@drawable/layout"
+        android:hint="Phone Number"
+        android:inputType="text"
+        android:padding="9dp"
+        android:textAllCaps="false"
+        android:textColor="@android:color/background_dark"
+        android:textColorHint="@color/Hint"
+        android:textSize="12sp" />
+
+
+    <EditText
+        android:id="@+id/password_input"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@+id/number_input"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginRight="35dp"
+        android:background="@drawable/layout"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:padding="9dp"
+        android:textAllCaps="false"
+        android:textColor="@android:color/background_dark"
+        android:textColorHint="@color/Hint"
+        android:textSize="12sp" />
+
+
+    <TextView
+        android:id="@+id/forgot_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Forgot Password ?"
+        android:gravity="center"
+        android:textColor="@color/colorPrimary"
+        android:layout_below="@id/password_input"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="17dp"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/signin_btn"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/forgot_password"
+        android:layout_marginLeft="110dp"
+        android:layout_marginRight="110dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/layout"
+        android:text="Login"
+        android:textAllCaps="false"
+        android:textColor="@android:color/background_dark"
+        android:textSize="16sp"
+        />
+
+
+
+    <TextView
+        android:id="@+id/admin_panel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Admin"
+        android:layout_below="@id/signin_btn"
+        android:layout_marginLeft="110dp"
+        android:layout_marginRight="110dp"
+        android:layout_marginTop="32dp"
+        android:gravity="center"
+        android:textSize="12dp"
+        android:textStyle="bold"
+        android:textColor="@android:color/background_light"
+        />
+
+    <TextView
+        android:id="@+id/not_admin_panel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Not an Admin?"
+        android:layout_below="@id/signin_btn"
+        android:layout_marginLeft="110dp"
+        android:layout_marginRight="110dp"
+        android:layout_marginTop="32dp"
+        android:gravity="center"
+        android:textSize="12dp"
+        android:textStyle="bold"
+        android:textColor="@android:color/background_light"
+        android:visibility="invisible"
+        />
+
+</RelativeLayout>

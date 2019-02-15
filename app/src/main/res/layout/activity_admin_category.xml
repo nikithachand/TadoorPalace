@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdminCategoryActivity">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary"
+            android:orientation="vertical"
+            android:padding="30dp">
+
+            <TextView
+                android:id="@+id/Logo_Cate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:text="ADD DISH"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/soup"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="10dp"
+                android:background="@mipmap/soupimg" />
+
+            <Button
+                android:id="@+id/soup_btn"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/soup"
+                android:layout_marginLeft="100dp"
+                android:layout_marginRight="100dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/blacklayout"
+                android:text="SOUP"
+                android:textAllCaps="false"
+                android:textColor="@android:color/background_dark"
+                android:textSize="19sp" />
+
+            <Button
+                android:id="@+id/appetizers"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:background="@mipmap/beefpatty" />
+
+            <Button
+                android:id="@+id/app_btn"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="100dp"
+                android:layout_marginRight="100dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/blacklayout"
+                android:text="APPETIZERS"
+                android:textAllCaps="false"
+                android:textColor="@android:color/background_dark"
+                android:textSize="19sp" />
+
+            <Button
+                android:id="@+id/main_course"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:background="@mipmap/fc_img" />
+
+            <Button
+                android:id="@+id/mainc_btn"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="100dp"
+                android:layout_marginRight="100dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/blacklayout"
+                android:text="MAIN COURSE"
+                android:textAllCaps="false"
+                android:textColor="@android:color/background_dark"
+                android:textSize="19sp" />
+
+            <Button
+                android:id="@+id/sides"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:background="@mipmap/nann" />
+
+            <Button
+                android:id="@+id/sides_btn"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="100dp"
+                android:layout_marginRight="100dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/blacklayout"
+                android:text="SIDES"
+                android:textAllCaps="false"
+                android:textColor="@android:color/background_dark"
+                android:textSize="19sp" />
+
+            <Button
+                android:id="@+id/beverages"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@mipmap/wata_img" />
+
+            <Button
+                android:id="@+id/beverage_btn"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="100dp"
+                android:layout_marginRight="100dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/blacklayout"
+                android:text="BEVERAGES"
+                android:textAllCaps="false"
+                android:textColor="@android:color/background_dark"
+                android:textSize="19sp" />
+
+            <Button
+                android:id="@+id/desserts"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@mipmap/dessert" />
+
+            <Button
+                android:id="@+id/dessert_btn"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="100dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="100dp"
+                android:background="@drawable/blacklayout"
+                android:text="DESSERT"
+                android:textAllCaps="false"
+                android:textColor="@android:color/background_dark"
+                android:textSize="19sp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
