@@ -23,6 +23,14 @@
           }
         },
         {
+          "client_id": "895906181646-icb5qb8pmgis9tbuhnt60q3fleogkcje.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tadoorpalace",
+            "certificate_hash": "49d29ec95a2df78c141ce9252728e2872b175999"
+          }
+        },
+        {
           "client_id": "895906181646-b34qtufh6trb4gmn2v5kc2kvsnalqlaq.apps.googleusercontent.com",
           "client_type": 3
         }

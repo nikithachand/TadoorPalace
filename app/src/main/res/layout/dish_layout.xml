@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="20dp"
+    android:layout_marginStart="15dp"
+    android:layout_marginEnd="15dp"
+    app:cardElevation="10dp"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/Dish_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dish Name"
+            android:textAlignment="center"
+            android:background="@drawable/blacklayout"
+            android:fontFamily="@font/avenir"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="27sp"
+            android:textStyle="bold"
+            />
+        <ImageView
+            android:id="@+id/Dish_Img"
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:layout_below="@+id/Dish_title"
+            android:scaleType="centerCrop"
+            android:layout_marginTop="5dp"
+            />
+        <TextView
+            android:id="@+id/Dish_Discription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Dish_Img"
+            android:textAlignment="center"
+            android:text="Dish Description"
+            android:fontFamily="@font/avenir"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:id="@+id/Dish_Price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Dish_Discription"
+            android:textAlignment="center"
+            android:text="Dish Price"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/avenir"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            />
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

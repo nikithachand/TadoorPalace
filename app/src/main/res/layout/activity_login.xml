@@ -63,8 +63,9 @@
         android:layout_below="@id/password_input"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
-        android:layout_marginTop="17dp"
-        android:textSize="14sp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/avenir"
+        android:textSize="19sp"
         android:textStyle="bold" />
 
     <Button
@@ -77,12 +78,11 @@
         android:layout_marginTop="25dp"
         android:background="@drawable/layout"
         android:text="Login"
+        android:fontFamily="@font/avenir"
         android:textAllCaps="false"
         android:textColor="@android:color/background_dark"
         android:textSize="16sp"
         />
-
-
 
     <TextView
         android:id="@+id/admin_panel"
@@ -94,7 +94,8 @@
         android:layout_marginRight="110dp"
         android:layout_marginTop="32dp"
         android:gravity="center"
-        android:textSize="12dp"
+        android:textSize="22sp"
+        android:fontFamily="@font/avenir"
         android:textStyle="bold"
         android:textColor="@android:color/background_light"
         />
@@ -109,8 +110,8 @@
         android:layout_marginRight="110dp"
         android:layout_marginTop="32dp"
         android:gravity="center"
-        android:textSize="12dp"
-        android:textStyle="bold"
+        android:fontFamily="@font/avenir"
+        android:textSize="22sp"
         android:textColor="@android:color/background_light"
         android:visibility="invisible"
         />
