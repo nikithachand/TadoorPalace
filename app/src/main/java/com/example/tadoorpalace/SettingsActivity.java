@@ -132,7 +132,7 @@ public class SettingsActivity extends AppCompatActivity {
         {
             Toast.makeText(this, "Error, Try Again.", Toast.LENGTH_SHORT).show();
 
-            startActivity(new Intent(SettingsActivity.this, SettingsActivity.class));
+            startActivity(new Intent(SettingsActivity.this, HomeActivity.class));
             finish();
         }
     }
@@ -206,7 +206,7 @@ public class SettingsActivity extends AppCompatActivity {
 
                                 progressDialog.dismiss();
 
-                                startActivity(new Intent(SettingsActivity.this, MainActivity.class));
+                                startActivity(new Intent(SettingsActivity.this, HomeActivity.class));
                                 Toast.makeText(SettingsActivity.this, "Profile Info update successfully.", Toast.LENGTH_SHORT).show();
                                 finish();
                             }

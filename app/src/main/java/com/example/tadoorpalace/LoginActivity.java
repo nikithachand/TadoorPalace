@@ -116,7 +116,7 @@ public class LoginActivity extends AppCompatActivity
         else
         {
             loadingBar.setTitle("Login Account");
-            loadingBar.setMessage("Checking the credentials.");
+            loadingBar.setMessage("Verifying Credentials.");
             loadingBar.setCanceledOnTouchOutside(false);
             loadingBar.show();
 
@@ -153,7 +153,7 @@ public class LoginActivity extends AppCompatActivity
                         if (usersData.getPassword().equals(password)) {
                             if (parentDbName.equals("BestMealsAdmin"))
                             {
-                                Toast.makeText(LoginActivity.this, "logged in Successfully...", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this, "Logged In! ", Toast.LENGTH_SHORT).show();
                                 loadingBar.dismiss();
                                 Intent intent = new Intent(LoginActivity.this, AdminCategoryActivity.class);
                                 startActivity(intent);
@@ -163,7 +163,7 @@ public class LoginActivity extends AppCompatActivity
 
                             else if (parentDbName.equals("Users"))
                             {
-                                Toast.makeText(LoginActivity.this, "logged in Successfully...", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this, "Logged In!", Toast.LENGTH_SHORT).show();
                                 loadingBar.dismiss();
                                 Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                                 Prevalent.currentOnlineUser = usersData;
