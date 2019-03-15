@@ -109,7 +109,7 @@ public class SettingsActivity extends AppCompatActivity {
         userMap. put("name", txtFNameChange.getText().toString());
         userMap. put("address", txtAddressChange.getText().toString());
         userMap. put("phoneOrder", txtPNumChange.getText().toString());
-        ref.child(Prevalent.currentOnlineUser.getNumber()).updateChildren(userMap);
+        ref.child(Prevalent.currentOnlineUser.getPhone()).updateChildren(userMap);
 
         startActivity(new Intent(SettingsActivity.this, MainActivity.class));
         Toast.makeText(SettingsActivity.this, "Profile Info update successfully.", Toast.LENGTH_SHORT).show();
@@ -170,7 +170,7 @@ public class SettingsActivity extends AppCompatActivity {
         if (imageUri != null)
         {
             final StorageReference fileRef = storageUserDpReference
-                    .child(Prevalent.currentOnlineUser.getNumber() + ".jpg");
+                    .child(Prevalent.currentOnlineUser.getPhone() + ".jpg");
 
             uploadTask = fileRef.putFile(imageUri);
 
@@ -202,7 +202,7 @@ public class SettingsActivity extends AppCompatActivity {
                                 userMap. put("address", txtAddressChange.getText().toString());
                                 userMap. put("phoneOrder", txtPNumChange.getText().toString());
                                 userMap. put("image", myUrl);
-                                ref.child(Prevalent.currentOnlineUser.getNumber()).updateChildren(userMap);
+                                ref.child(Prevalent.currentOnlineUser.getPhone()).updateChildren(userMap);
 
                                 progressDialog.dismiss();
 
@@ -228,7 +228,7 @@ public class SettingsActivity extends AppCompatActivity {
     private void userInfoDisplay(CircleImageView userImageView, final EditText txtFNameChange, final EditText txtPNumChange, final EditText txtAddressChange)
 
         {
-            DatabaseReference UsersRef = FirebaseDatabase.getInstance().getReference().child("Users").child(Prevalent.currentOnlineUser.getNumber());
+            DatabaseReference UsersRef = FirebaseDatabase.getInstance().getReference().child("Users").child(Prevalent.currentOnlineUser.getPhone());
 
             UsersRef.addValueEventListener(new ValueEventListener() {
                 @Override

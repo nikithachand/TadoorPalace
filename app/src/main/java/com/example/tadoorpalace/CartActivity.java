@@ -22,16 +22,19 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class CartActivity extends AppCompatActivity
 {
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;
     private Button txtNextBtn;
-    private TextView txtCost;
-
+    private TextView txtCost, OrderMsg;
+    private String TotalCost;
 
 
     @Override
@@ -46,6 +49,21 @@ public class CartActivity extends AppCompatActivity
 
         txtNextBtn = (Button) findViewById(R.id.Nextbtn);
         txtCost = (TextView) findViewById(R.id.Cart_Total);
+        OrderMsg = (TextView) findViewById(R.id.orderPlaced);
+
+
+        txtNextBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                txtCost.setText("Total Cost = $" + String.valueOf(TotalCost));
+
+                Intent intent = new Intent(CartActivity.this, ConfirmOrderActivity.class);
+                intent.putExtra("Total Cost", String.valueOf(TotalCost));
+                startActivity(intent);
+                finish();
+            }
+        });
 
 
     }
@@ -55,12 +73,14 @@ public class CartActivity extends AppCompatActivity
     {
         super.onStart();
 
+        CheckOrderState();
+
         final DatabaseReference CartListRef = FirebaseDatabase.getInstance().getReference().child("Cart List");
 
         FirebaseRecyclerOptions<Cart> options =
                 new FirebaseRecyclerOptions.Builder<Cart>()
                 .setQuery(CartListRef.child("User View")
-                .child(Prevalent.currentOnlineUser.getNumber()).child("Products"), Cart.class).build();
+                .child(Prevalent.currentOnlineUser.getPhone()).child("Products"), Cart.class).build();
 
         FirebaseRecyclerAdapter<Cart, CartViewHolder>adapter
                 = new FirebaseRecyclerAdapter<Cart, CartViewHolder>(options) {
@@ -70,6 +90,10 @@ public class CartActivity extends AppCompatActivity
                 holder.txtDishQuantity.setText( "Quantity: "+ model.getQuantity());
                 holder.txtDishPrice.setText("$ "+ model.getPrice());
                 holder.txtDishName.setText(model.getDishName());
+
+                int OneDishPrice = ((Integer.valueOf(model.getPrice()))) * Integer.valueOf(model.getQuantity());
+                TotalCost = TotalCost + OneDishPrice;
+
 
                 holder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -97,7 +121,7 @@ public class CartActivity extends AppCompatActivity
                                 if (i == 1)
                                 {
                                     CartListRef.child("User View")
-                                            .child(Prevalent.currentOnlineUser.getNumber())
+                                            .child(Prevalent.currentOnlineUser.getPhone())
                                             .child("Products")
                                             .child(model.getPid())
                                             .removeValue()
@@ -133,5 +157,46 @@ public class CartActivity extends AppCompatActivity
 
         recyclerView.setAdapter(adapter);
         adapter.startListening();
+    }
+
+    private void CheckOrderState()
+    {
+        final DatabaseReference orderRef;
+        orderRef = FirebaseDatabase.getInstance().getReference().child("Orders").child(Prevalent.currentOnlineUser.getPhone());
+
+        orderRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot)
+            {
+                if(dataSnapshot.exists())
+                {
+                    String shippingState = dataSnapshot.child("State").getValue().toString();
+                    String uName = dataSnapshot.child("Name").getValue().toString();
+
+                    if(shippingState.equals("Delivery in Process"))
+                    {
+                        txtCost.setText(uName + "Your Food is on its Way");
+                        recyclerView.setVisibility(View.GONE);
+
+                        OrderMsg.setVisibility(View.VISIBLE);
+                        txtNextBtn.setVisibility(View.GONE);
+                    }
+                    else if (shippingState.equals("Delivery Pending"))
+                    {
+                        txtCost.setText(uName + "Your Food is on its Way");
+                        recyclerView.setVisibility(View.GONE);
+
+                        OrderMsg.setVisibility(View.VISIBLE);
+                        txtNextBtn.setVisibility(View.GONE);
+                    }
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 }

@@ -1,9 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@mipmap/register"
     tools:context=".ConfirmOrderActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <ImageView
+        android:id="@+id/login_app"
+        android:layout_width="300dp"
+        android:layout_height="170dp"
+        android:src="@drawable/logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        />
+
+    <TextView
+        android:id="@+id/Label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text= "Delivery Details "
+        android:textSize="30sp"
+        android:layout_below="@id/login_app"
+        android:textColor="@color/colorPrimary"
+        android:layout_margin="15dp"
+        android:textAlignment="center"
+        android:fontFamily="@font/avenir"
+        android:textStyle="bold"
+        />
+
+    <EditText
+        android:id="@+id/DeliveryName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Label"
+        android:background="@drawable/layout"
+        android:layout_marginTop="22dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:hint="Name"
+        android:padding="8dp"
+        />
+
+    <EditText
+        android:id="@+id/DeliveryPhN"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/DeliveryName"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/layout"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:hint="Phone Number"
+        android:padding="8dp"
+        />
+
+    <EditText
+        android:id="@+id/DeliveryAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/DeliveryPhN"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/layout"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:hint="Delivery Address"
+        android:padding="8dp"
+        />
+
+    <Button
+        android:id="@+id/confirm_btn"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/DeliveryAddress"
+        android:layout_marginLeft="110dp"
+        android:layout_marginRight="110dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/layout"
+        android:text="CONFIRM"
+        android:textStyle="bold"
+        android:fontFamily="@font/avenir"
+        android:textAllCaps="false"
+        android:textColor="@android:color/background_dark"
+        android:textSize="16sp"
+        />
+
+</RelativeLayout>

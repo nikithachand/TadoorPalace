@@ -45,8 +45,6 @@ public class MainActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                 startActivity(intent);
-
-
             }
         });
 
@@ -71,8 +69,6 @@ public class MainActivity extends AppCompatActivity {
             if (!TextUtils.isEmpty(UserPhoneKey)  &&  !TextUtils.isEmpty(UserPasswordKey))
             {
                 AllowAccess(UserPhoneKey, UserPasswordKey);
-
-
             }
         }
 
@@ -99,26 +95,21 @@ public class MainActivity extends AppCompatActivity {
                 {
                     Users usersData = dataSnapshot.child("Users").child(number).getValue(Users.class);
 
-                    if (usersData.getNumber().equals(number))
+                    if (usersData.getPhone().equals(number))
                     {
                         if (usersData.getPassword().equals(password))
                         {
                             Intent intent = new Intent(MainActivity.this, HomeActivity.class);
                             startActivity(intent);
 
-
                         }
 
                         else
                         {
-
                             Toast.makeText(MainActivity.this, "Incorrect Password/Phone Number", Toast.LENGTH_SHORT).show();
-
 
                         }
                     }
-
-
 
                 }
                 else

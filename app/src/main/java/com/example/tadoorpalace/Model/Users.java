@@ -2,7 +2,7 @@ package com.example.tadoorpalace.Model;
 
 public class Users {
 
-    private String name, number, password, image, address;
+    private String name, phone, password, image, address;
 
     public Users() {
 
@@ -11,7 +11,7 @@ public class Users {
 
     public Users(String name, String number, String password, String image, String address) {
         this.name = name;
-        this.number = number;
+        this.phone = number;
         this.password = password;
         this.image = image;
         this.address = address;
@@ -25,12 +25,12 @@ public class Users {
         this.name = name;
     }
 
-    public String getNumber() {
-        return number;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setNumber(String number) {
-        this.number = number;
+    public void setPhone(String number) {
+        this.phone = number;
     }
 
     public String getPassword() {

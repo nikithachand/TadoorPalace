@@ -33,7 +33,7 @@ public class DishDetailsActivity extends AppCompatActivity {
     private ImageView ddishimg;
     private ElegantNumberButton NumBtn;
     private TextView ddprice, dddescription, ddname;
-    private String ProductID = " ";
+    private String ProductID = " ", State = "Normal";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,8 +57,17 @@ public class DishDetailsActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 AddingtoCart();
+
             }
         });
+    }
+
+    @Override
+    protected void onStart()
+    {
+        super.onStart();
+
+        CheckOrderState();
     }
 
     private void AddingtoCart()
@@ -82,7 +91,7 @@ public class DishDetailsActivity extends AppCompatActivity {
         cartMap.put("Quantity", NumBtn.getNumber());
         cartMap.put("Discount", "");
 
-        CartListRef.child("User View").child(Prevalent.currentOnlineUser.getNumber())
+        CartListRef.child("User View").child(Prevalent.currentOnlineUser.getPhone())
                 .child("Products").child(ProductID)
                 .updateChildren(cartMap)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -91,7 +100,7 @@ public class DishDetailsActivity extends AppCompatActivity {
                     {
                         if(task.isSuccessful())
                         {
-                            CartListRef.child("Admin View").child(Prevalent.currentOnlineUser.getNumber())
+                            CartListRef.child("Admin View").child(Prevalent.currentOnlineUser.getPhone())
                                     .child("Products").child(ProductID)
                                     .updateChildren(cartMap)
                                     .addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -129,6 +138,38 @@ public class DishDetailsActivity extends AppCompatActivity {
                     ddprice.setText(products.getPrice());
                     dddescription.setText(products.getDescription());
                     Picasso.get().load(products.getImage()).into(ddishimg);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
+
+    private void CheckOrderState()
+    {
+        final DatabaseReference orderRef;
+        orderRef = FirebaseDatabase.getInstance().getReference().child("Orders").child(Prevalent.currentOnlineUser.getPhone());
+
+        orderRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot)
+            {
+                if(dataSnapshot.exists())
+                {
+                    String shippingState = dataSnapshot.child("State").getValue().toString();
+
+                    if(shippingState.equals("Delivery in Process"))
+                    {
+                        State = "Order Shipped";
+                    }
+                    else if (shippingState.equals("Delivery Pending"))
+                    {
+                        State = "Order Shipped";
+                    }
+
                 }
             }
 

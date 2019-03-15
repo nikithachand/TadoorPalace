@@ -80,10 +80,5 @@ public class AdminCategoryActivity extends AppCompatActivity {
         });
 
 
-
-
-
-
-
     }
 }
