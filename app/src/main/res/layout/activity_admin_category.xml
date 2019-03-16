@@ -28,17 +28,16 @@
 
             <Button
                 android:id="@+id/newOrders_btn"
-                android:layout_width="203dp"
-                android:layout_height="41dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="75dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginRight="75dp"
                 android:background="@drawable/blacklayout"
-                android:backgroundTint="@color/Indigo"
                 android:fontFamily="@font/avenir"
                 android:text="NEW ORDERS"
                 android:textAllCaps="false"
-                android:textColor="@color/colorPrimary"
+                android:textColor="@color/colorPrimaryDark"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -188,14 +187,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/dessert_btn"
-                android:background="@drawable/blacklayout"
-                android:backgroundTint="@color/Green"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="65dp"
+                android:layout_marginLeft="65dp"
+                android:background="@color/Green"
                 android:fontFamily="@font/avenir"
                 android:text="Logout"
                 android:textAllCaps="false"
-                android:textColor="@color/colorPrimary"
+                android:textColor="@color/colorPrimaryDark"
                 android:textSize="22sp"
-                android:layout_marginTop="10dp"
                 android:textStyle="bold" />
 
         </LinearLayout>

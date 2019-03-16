@@ -32,9 +32,12 @@ public class CartActivity extends AppCompatActivity
 {
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;
+
     private Button txtNextBtn;
     private TextView txtCost, OrderMsg;
-    private String TotalCost;
+
+
+    private int TotalCost = 0 ;
 
 
     @Override

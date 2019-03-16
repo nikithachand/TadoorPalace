@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SearchActivity">
+
+
+    <RelativeLayout
+        android:id="@+id/Rlayout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true">
+
+        <ImageView
+            android:id="@+id/SLogo"
+            android:layout_width="210dp"
+            android:layout_height="138dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/bwlogo" />
+
+        <EditText
+            android:id="@+id/SearchDish"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/SLogo"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="30dp"
+            android:hint="Dish Name"
+            android:textColorHint="@color/colorPrimaryDark" />
+
+        <Button
+            android:id="@+id/Searchbtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/SearchDish"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="140dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="140dp"
+            android:background="@color/Green"
+            android:fontFamily="@font/avenir"
+            android:text="Search"
+            android:textStyle="bold"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+    
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/Search"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/Rlayout4"
+        >
+
+    </android.support.v7.widget.RecyclerView>
+
+</RelativeLayout>

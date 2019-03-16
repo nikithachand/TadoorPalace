@@ -18,7 +18,7 @@
         android:layout_marginTop="28dp"
         android:layout_marginRight="15dp"
         android:text="UPLOAD DISH"
-        android:fontFamily="@font/signpainter"
+        android:fontFamily="@font/avenir"
         android:textAlignment="center"
         android:textColor="@color/colorPrimary"
         android:textSize="39sp"

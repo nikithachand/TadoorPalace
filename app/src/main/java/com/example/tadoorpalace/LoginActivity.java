@@ -30,8 +30,6 @@ public class LoginActivity extends AppCompatActivity
     private Button LoginButton;
     private TextView AdminLink, NotAdmin;
     private ProgressDialog loadingBar;
-
-
     private String parentDbName = "Users";
 
 
@@ -49,18 +47,12 @@ public class LoginActivity extends AppCompatActivity
         NotAdmin = (TextView) findViewById(R.id.not_admin_panel);
         loadingBar = new ProgressDialog(this);
 
-
-
         Paper.init(this);
-
 
         LoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-
                 LoginUser();
-
             }
         });
 
@@ -73,7 +65,6 @@ public class LoginActivity extends AppCompatActivity
                 AdminLink.setVisibility(View.INVISIBLE);
                 NotAdmin.setVisibility(View.VISIBLE);
                 parentDbName = "BestMealsAdmin";
-
             }
         });
 
@@ -86,12 +77,8 @@ public class LoginActivity extends AppCompatActivity
                 AdminLink.setVisibility(View.VISIBLE);
                 NotAdmin.setVisibility(View.INVISIBLE);
                 parentDbName = "Users";
-
-
             }
         });
-
-
     }
 
 

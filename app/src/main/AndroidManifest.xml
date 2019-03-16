@@ -15,7 +15,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:label">
-        <activity android:name=".AdminCustOrderActivity"></activity>
+        <activity android:name=".SearchActivity"></activity>
+        <activity android:name=".AdminCustOrderActivity" />
         <activity android:name=".AdminOrdersActivity" />
         <activity android:name=".ConfirmOrderActivity" />
         <activity android:name=".CartActivity" />

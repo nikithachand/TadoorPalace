@@ -1,7 +1,9 @@
 package com.example.tadoorpalace;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -67,6 +69,39 @@ public class AdminOrdersActivity extends AppCompatActivity {
                                     startActivity(intent);
                                 }
                             });
+
+                            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v)
+                                {
+                                    CharSequence options[] = new CharSequence[]
+                                            {
+                                                    "Yes",
+                                                    "No"
+                                            };
+                                    AlertDialog.Builder builder = new AlertDialog.Builder(AdminOrdersActivity.this);
+                                    builder.setTitle("The Order has left the Premises ?");
+
+                                    builder.setItems(options, new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int i)
+                                        {
+                                            if (i == 0)
+                                            {
+                                                String uID = getRef(position).getKey();
+
+                                                RemoveOrder(uID);
+                                            }
+                                            else
+                                            {
+                                                finish();
+                                            }
+                                        }
+                                    });
+                                    
+                                    builder.show();
+                                }
+                            });
                     }
 
                     @NonNull
@@ -79,6 +114,8 @@ public class AdminOrdersActivity extends AppCompatActivity {
         OrdersList.setAdapter(adapter);
         adapter.startListening();
     }
+
+
 
     public static class AdminOrdersViewHolder extends RecyclerView.ViewHolder
     {
@@ -99,4 +136,10 @@ public class AdminOrdersActivity extends AppCompatActivity {
 
         }
     }
+
+    private void RemoveOrder(String uID)
+    {
+        orderRef.child(uID).removeValue();
+    }
+
 }
