@@ -26,7 +26,7 @@ public class ConfirmOrderActivity extends AppCompatActivity
     private EditText ETName, ETPhoneNum, ETAddress;
     private Button ConfirmBtn;
 
-    private String totalAmt = "";
+    private String totalAmt = " ";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,7 +81,7 @@ public class ConfirmOrderActivity extends AppCompatActivity
 
         final DatabaseReference ordersRef = FirebaseDatabase.getInstance().getReference()
                 .child("Orders")
-                .child(Prevalent.currentOnlineUser.getPhone());
+                .child(Prevalent.currentOnlineUser.getNumber());
 
         HashMap<String, Object> orderMap = new HashMap<>();
         orderMap.put("TotalAmount", totalAmt);
@@ -101,7 +101,7 @@ public class ConfirmOrderActivity extends AppCompatActivity
                     FirebaseDatabase.getInstance().getReference()
                             .child("Cart List")
                             .child("User View")
-                            .child(Prevalent.currentOnlineUser.getPhone())
+                            .child(Prevalent.currentOnlineUser.getNumber())
                             .removeValue()
                             .addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override

@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
                 {
                     Users usersData = dataSnapshot.child("Users").child(number).getValue(Users.class);
 
-                    if (usersData.getPhone().equals(number))
+                    if (usersData.getNumber().equals(number))
                     {
                         if (usersData.getPassword().equals(password))
                         {

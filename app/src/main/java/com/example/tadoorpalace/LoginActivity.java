@@ -149,7 +149,7 @@ public class LoginActivity extends AppCompatActivity
                 {
                     Users usersData = dataSnapshot.child(parentDbName).child(number).getValue(Users.class);
 
-                    if (usersData.getPhone().equals(number)) {
+                    if (usersData.getNumber().equals(number)) {
                         if (usersData.getPassword().equals(password)) {
                             if (parentDbName.equals("BestMealsAdmin"))
                             {
@@ -179,12 +179,8 @@ public class LoginActivity extends AppCompatActivity
                             Toast.makeText(LoginActivity.this, "Incorrect Credentials", Toast.LENGTH_SHORT).show();
                             LoginNumber.setText("");
                             LoginPassword.setText("");
-
-
                         }
-
                     }
-
                 }
 
                 else

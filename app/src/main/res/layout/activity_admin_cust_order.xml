@@ -4,11 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AdminOrdersActivity">
-
+    tools:context=".AdminCustOrderActivity">
 
     <RelativeLayout
-        android:id="@+id/Rlayout2"
+        android:id="@+id/Rlayout3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true">
@@ -51,12 +50,11 @@
         />
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/Order_list"
+        android:id="@+id/Dish_list"
         android:layout_width="match_parent"
         android:layout_height="610dp"
-        android:layout_below="@id/Rlayout2"
+        android:layout_below="@id/Rlayout3"
         android:layout_marginBottom="-14dp">
     </android.support.v7.widget.RecyclerView>
-
 
 </RelativeLayout>

@@ -91,7 +91,7 @@ public class DishDetailsActivity extends AppCompatActivity {
         cartMap.put("Quantity", NumBtn.getNumber());
         cartMap.put("Discount", "");
 
-        CartListRef.child("User View").child(Prevalent.currentOnlineUser.getPhone())
+        CartListRef.child("User View").child(Prevalent.currentOnlineUser.getNumber())
                 .child("Products").child(ProductID)
                 .updateChildren(cartMap)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -100,7 +100,7 @@ public class DishDetailsActivity extends AppCompatActivity {
                     {
                         if(task.isSuccessful())
                         {
-                            CartListRef.child("Admin View").child(Prevalent.currentOnlineUser.getPhone())
+                            CartListRef.child("Admin View").child(Prevalent.currentOnlineUser.getNumber())
                                     .child("Products").child(ProductID)
                                     .updateChildren(cartMap)
                                     .addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -151,7 +151,7 @@ public class DishDetailsActivity extends AppCompatActivity {
     private void CheckOrderState()
     {
         final DatabaseReference orderRef;
-        orderRef = FirebaseDatabase.getInstance().getReference().child("Orders").child(Prevalent.currentOnlineUser.getPhone());
+        orderRef = FirebaseDatabase.getInstance().getReference().child("Orders").child(Prevalent.currentOnlineUser.getNumber());
 
         orderRef.addValueEventListener(new ValueEventListener() {
             @Override

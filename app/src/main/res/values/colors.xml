@@ -4,6 +4,8 @@
     <color name="colorPrimaryDark">#000</color>
     <color name="colorAccent">#999696</color>
     <color name="Hint">#999696</color>
+    <color name="Green">#32CD32</color>
+    <color name="Indigo">#5F0F4E</color>
 </resources>
 
 

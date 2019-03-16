@@ -80,7 +80,7 @@ public class CartActivity extends AppCompatActivity
         FirebaseRecyclerOptions<Cart> options =
                 new FirebaseRecyclerOptions.Builder<Cart>()
                 .setQuery(CartListRef.child("User View")
-                .child(Prevalent.currentOnlineUser.getPhone()).child("Products"), Cart.class).build();
+                .child(Prevalent.currentOnlineUser.getNumber()).child("Products"), Cart.class).build();
 
         FirebaseRecyclerAdapter<Cart, CartViewHolder>adapter
                 = new FirebaseRecyclerAdapter<Cart, CartViewHolder>(options) {
@@ -121,7 +121,7 @@ public class CartActivity extends AppCompatActivity
                                 if (i == 1)
                                 {
                                     CartListRef.child("User View")
-                                            .child(Prevalent.currentOnlineUser.getPhone())
+                                            .child(Prevalent.currentOnlineUser.getNumber())
                                             .child("Products")
                                             .child(model.getPid())
                                             .removeValue()
@@ -162,7 +162,7 @@ public class CartActivity extends AppCompatActivity
     private void CheckOrderState()
     {
         final DatabaseReference orderRef;
-        orderRef = FirebaseDatabase.getInstance().getReference().child("Orders").child(Prevalent.currentOnlineUser.getPhone());
+        orderRef = FirebaseDatabase.getInstance().getReference().child("Orders").child(Prevalent.currentOnlineUser.getNumber());
 
         orderRef.addValueEventListener(new ValueEventListener() {
             @Override
